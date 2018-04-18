@@ -6,19 +6,12 @@ import {
   Text,
   ActivityIndicator
 } from 'react-native';
+import style from './style';
 
 const propTypes = {
   getData: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
-  data: PropTypes.shape({
-    instructions: PropTypes.array.isRequired
-  }).isRequired,
-  style: PropTypes.shape({
-    activityIndicatorContainer: PropTypes.object.isRequired,
-    row: PropTypes.object.isRequired,
-    title: PropTypes.object.isRequired,
-    description: PropTypes.object.isRequired
-  }).isRequired
+  data: PropTypes.arrayOf(Object).isRequired
 };
 
 class Main extends Component {
@@ -28,23 +21,19 @@ class Main extends Component {
     getData();
   }
 
-  renderItem = ({ item, index }) => {
-    const { style } = this.props;
-
-    return (
-      <View style={style.row}>
-        <Text style={style.title}>
-          {(parseInt(index) + 1)}{". "}{item.title}
-        </Text>
-        <Text style={style.description}>
-          {item.description}
-        </Text>
-      </View>
-    )
-  }
+  renderItem = ({ item, index }) => (
+    <View style={style.row}>
+      <Text style={style.title}>
+        {(parseInt(index) + 1)}{". "}{item.title}
+      </Text>
+      <Text style={style.description}>
+        {item.description}
+      </Text>
+    </View>
+  )
 
   render() {
-    const { style, data, loading } = this.props;
+    const { data, loading } = this.props;
 
     if (loading) {
       return (

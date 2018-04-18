@@ -3,5 +3,5 @@ import sampleData from '../instructions.json';
 
 export const getData = () => ({
   type: DATA_AVAILABLE,
-  payload: sampleData.data
+  payload: sampleData.instructions
 });
