@@ -6,8 +6,8 @@
   ],
   "parserOptions": {
     "ecmaFeatures": {
-        "jsx": true,
-        "modules": true
+      "jsx": true,
+      "modules": true
     }
   },
   "extends" : [
