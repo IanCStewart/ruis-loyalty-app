@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Main from './component';
-import { getData } from '../../actions/sample-data';
+import { getData, getDataSuccess } from '../../actions/sample-data';
 
 const mapStateToProps = (state) => ({
   loading: state.sampleData.loading,
@@ -8,7 +8,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  getData: () => dispatch(getData())
+  getData: () => dispatch(getData()),
+  getDataSuccess: () => dispatch(getDataSuccess())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);

@@ -10,15 +10,17 @@ import style from './style';
 
 const propTypes = {
   getData: PropTypes.func.isRequired,
+  getDataSuccess: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   data: PropTypes.arrayOf(Object).isRequired
 };
 
 class Main extends Component {
   componentDidMount() {
-    const { getData } = this.props;
+    const { getData, getDataSuccess } = this.props;
 
     getData();
+    setTimeout(getDataSuccess, 3000);
   }
 
   renderItem = ({ item, index }) => (
@@ -48,7 +50,7 @@ class Main extends Component {
         <FlatList
           data={data}
           renderItem={this.renderItem}
-          keyExtractor={(item, index) => index}
+          keyExtractor={(item, index) => `item-${index}`}
         />
       </View>
     );
