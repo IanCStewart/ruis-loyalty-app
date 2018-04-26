@@ -7,12 +7,17 @@ import {
   ActivityIndicator
 } from 'react-native';
 import style from './style';
+import IconHome from '../icons/home';
 
 const propTypes = {
   getData: PropTypes.func.isRequired,
   getDataSuccess: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   data: PropTypes.arrayOf(Object).isRequired
+};
+
+const navigationOptions = {
+  tabBarIcon: ({ tintColor }) => <IconHome color={tintColor} />
 };
 
 class Instructions extends Component {
@@ -58,5 +63,6 @@ class Instructions extends Component {
 }
 
 Instructions.propTypes = propTypes;
+Instructions.navigationOptions = navigationOptions;
 
 export default Instructions;
