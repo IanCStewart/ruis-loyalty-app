@@ -22,6 +22,6 @@ const IconHome = ({ color, iconStyle }) => (
 
 IconHome.propTypes = propTypes;
 IconHome.defaultProps = defaultProps;
-IconHome.displayName = 'IconMale';
+IconHome.displayName = 'IconHome';
 
 export default IconHome;
