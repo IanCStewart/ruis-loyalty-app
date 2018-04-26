@@ -20,7 +20,7 @@ const navigationOptions = {
   tabBarIcon: ({ tintColor }) => <IconHome color={tintColor} />
 };
 
-class Instructions extends Component {
+class Home extends Component {
   componentDidMount() {
     const { getData, getDataSuccess } = this.props;
 
@@ -62,7 +62,7 @@ class Instructions extends Component {
   }
 }
 
-Instructions.propTypes = propTypes;
-Instructions.navigationOptions = navigationOptions;
+Home.propTypes = propTypes;
+Home.navigationOptions = navigationOptions;
 
-export default Instructions;
+export default Home;

@@ -2,10 +2,10 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import style from './style';
 
-const Settings = () => (
+const Qr = () => (
   <View style={style.root}>
-    <Text>Settings</Text>
+    <Text>Qr</Text>
   </View>
 );
 
-export default Settings;
+export default Qr;
