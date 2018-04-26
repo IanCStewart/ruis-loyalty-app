@@ -17,7 +17,7 @@ const propTypes = {
 };
 
 const navigationOptions = {
-  tabBarIcon: ({ tintColor }) => <IconHome color={tintColor} />
+  tabBarIcon: ({ tintColor }) => <IconHome color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types
 };
 
 class Home extends Component {
