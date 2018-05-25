@@ -7,7 +7,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import style from './style';
-import IconHome from '../icons/home';
+import IconHome from '../../components/icons/home';
 
 const propTypes = {
   getData: PropTypes.func.isRequired,

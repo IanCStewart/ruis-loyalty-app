@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import style from './style';
-import IconProfile from '../icons/profile';
+import IconProfile from '../../components/icons/profile';
 
 const navigationOptions = {
   tabBarIcon: ({ tintColor }) => <IconProfile color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types

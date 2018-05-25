@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import style from './style';
-import IconDeals from '../icons/deals';
+import IconDeals from '../../components/icons/deals';
 
 const navigationOptions = {
   tabBarIcon: ({ tintColor }) => <IconDeals color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { YellowBox } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './app/store';
-import Main from './app/components/main';
+import AppRouter from './app/navigators/app';
 
 YellowBox.ignoreWarnings([
   'Warning: componentWillMount is deprecated',
@@ -15,7 +15,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Main />
+        <AppRouter />
       </Provider>
     );
   }
