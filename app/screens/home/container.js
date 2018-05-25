@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Main from './component';
+import Home from './component';
 import { getData, getDataSuccess } from '../../actions/sample-data';
 
 const mapStateToProps = (state) => ({
@@ -12,4 +12,4 @@ const mapDispatchToProps = (dispatch) => ({
   getDataSuccess: () => dispatch(getDataSuccess())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

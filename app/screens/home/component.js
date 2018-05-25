@@ -7,6 +7,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import style from './style';
+import IconHome from '../../components/icons/home';
 
 const propTypes = {
   getData: PropTypes.func.isRequired,
@@ -15,7 +16,11 @@ const propTypes = {
   data: PropTypes.arrayOf(Object).isRequired
 };
 
-class Main extends Component {
+const navigationOptions = {
+  tabBarIcon: ({ tintColor }) => <IconHome color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types
+};
+
+class Home extends Component {
   componentDidMount() {
     const { getData, getDataSuccess } = this.props;
 
@@ -57,6 +62,7 @@ class Main extends Component {
   }
 }
 
-Main.propTypes = propTypes;
+Home.propTypes = propTypes;
+Home.navigationOptions = navigationOptions;
 
-export default Main;
+export default Home;
