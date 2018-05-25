@@ -15,8 +15,12 @@ const Tabs = TabNavigator(
   },
   {
     tabBarOptions: {
-      activeTintColor: '#4B77BE'
-    }
+      activeTintColor: '#4B77BE',
+      style: {
+        backgroundColor: 'rgba(33,33,33,0.72)'
+      }
+    },
+    tabBarPosition: 'bottom'
   }
 );
 
