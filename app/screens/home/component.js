@@ -6,6 +6,7 @@ import {
   Text,
   ActivityIndicator
 } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 import style from './style';
 import IconHome from '../../components/icons/home';
 
@@ -51,13 +52,13 @@ class Home extends Component {
     }
 
     return (
-      <View style={style.root}>
+      <SafeAreaView style={style.root}>
         <FlatList
           data={data}
           renderItem={this.renderItem}
           keyExtractor={(item, index) => `item-${index}`}
         />
-      </View>
+      </SafeAreaView>
     );
   }
 }
