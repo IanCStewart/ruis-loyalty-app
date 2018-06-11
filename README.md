@@ -114,7 +114,7 @@ If all went as expected you should see something like `11:15:51: Starting packag
 2. Open the app in Expo
 
 After `Packager started!` appeared in your terminal you should see an QR code with some
-other instructions. To run the app on your iOS device send the link below the QR code, this should look somewhat like `Your app is now running at URL: exp://10.0.1.19:19000`, too yourself and open this link *(Or send the link by email by pressing `s` on your keyboard and the filling in your email)*. The expo app should launch and open the project
+other instructions. To run the app on your iOS device send the link below the QR code, this should look somewhat like `Your app is now running at URL: exp://10.0.1.19:19000`, too yourself and open this link *(OR send the link by email by pressing `s` on your keyboard and the filling in your email)*. The expo app should launch and open the project
 
 3. Use the app on your iOS device
 
@@ -135,7 +135,7 @@ If all went as expected you should see something like `11:15:51: Starting packag
 2. Open the app in Expo
 
 After `Packager started!` appeared in your terminal you should see an QR code with some
-other instructions. To run the app on your Android device point the expo QR scanner towards the code in your terminal *(OR send the link below the QR code, this should look somewhat like `Your app is now running at URL: exp://10.0.1.19:19000`, too yourself and open this link; Or send the link by email by pressing `s` on your keyboard and the filling in your email)*. The expo app should open the project.
+other instructions. To run the app on your Android device point the expo QR scanner towards the code in your terminal *(OR send the link below the QR code, this should look somewhat like `Your app is now running at URL: exp://10.0.1.19:19000`, too yourself and open this link; OR send the link by email by pressing `s` on your keyboard and the filling in your email)*. The expo app should open the project.
 
 3. Use the app on your Android device
 
