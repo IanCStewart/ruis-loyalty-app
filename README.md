@@ -4,10 +4,10 @@
 > Graduation Project [Communication &amp; Multimedia Design, Amsterdam University of Applied Sciences](https://www.cmd-amsterdam.nl) for [Club Ruis](http://www.clubruis.nl)
 
 ## 📖 Introduction
-
+This app is a loyalty app for [Club Ruis](http://www.clubruis.nl). With this app you can collect club coins by for instance visiting the club or ordering drinks. With these coins you will be able to get deals like `x% discount on x drinks`.
 
 ### Use Case
-
+A club visitor has the loyalty app installed on his device and is waiting in line. When he enters the club he can get his personal code scanned. By scanning his code at the door he receives an amount of club coins. While in the club the visitor decides he wants to have a drink. While heading to the register he activate a deal for `2 beer for the price off 1`. At the register he orders 2 bears. Before checkout he gets his personal code scanned. The cash register acknowledges the discount redeemed by the user and adds the discount before checkout. The visitor can now enjoy his beer with his friend who just got a free drink.
 
 ## ⚙️ Installation & Development
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
