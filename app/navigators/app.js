@@ -1,13 +1,13 @@
-import { TabNavigator } from 'react-navigation';
-import Home from '../screens/home';
+import { createBottomTabNavigator } from 'react-navigation';
+import HomeStack from './home';
 import Events from '../screens/events';
 import Qr from '../screens/qr';
 import Deals from '../screens/deals';
 import Profile from '../screens/profile';
 
-const Tabs = TabNavigator(
+const Tabs = createBottomTabNavigator(
   {
-    Home: { screen: Home },
+    Home: HomeStack,
     Events: { screen: Events },
     QR: { screen: Qr },
     Deals: { screen: Deals },
@@ -17,10 +17,9 @@ const Tabs = TabNavigator(
     tabBarOptions: {
       activeTintColor: '#4B77BE',
       style: {
-        backgroundColor: 'rgba(33,33,33,0.72)'
+        backgroundColor: '#212121'
       }
-    },
-    tabBarPosition: 'bottom'
+    }
   }
 );
 

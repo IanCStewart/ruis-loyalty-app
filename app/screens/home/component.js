@@ -4,21 +4,19 @@ import {
   FlatList,
   View,
   Text,
-  ActivityIndicator
+  ActivityIndicator,
+  TouchableOpacity
 } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
 import style from './style';
-import IconHome from '../../components/icons/home';
 
 const propTypes = {
   getData: PropTypes.func.isRequired,
   getDataSuccess: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
-  data: PropTypes.arrayOf(Object).isRequired
-};
-
-const navigationOptions = {
-  tabBarIcon: ({ tintColor }) => <IconHome color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types
+  data: PropTypes.arrayOf(Object).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired
+  }).isRequired
 };
 
 class Home extends Component {
@@ -29,15 +27,22 @@ class Home extends Component {
     setTimeout(getDataSuccess, 3000);
   }
 
+  onItemPress = (title) => this.props.navigation.navigate('Details', { article: title });
+
   renderItem = ({ item, index }) => (
-    <View style={style.row}>
-      <Text style={style.title}>
-        {(parseInt(index) + 1)}{". "}{item.title}
-      </Text>
-      <Text style={style.description}>
-        {item.description}
-      </Text>
-    </View>
+    <TouchableOpacity
+      onPress={() => this.onItemPress(item.title)}
+      activeOpacity={0.5}
+    >
+      <View style={style.row}>
+        <Text style={style.title}>
+          {(parseInt(index) + 1)}{". "}{item.title}
+        </Text>
+        <Text style={style.description}>
+          {item.description}
+        </Text>
+      </View>
+    </TouchableOpacity>
   )
 
   render() {
@@ -52,18 +57,16 @@ class Home extends Component {
     }
 
     return (
-      <SafeAreaView style={style.root}>
-        <FlatList
-          data={data}
-          renderItem={this.renderItem}
-          keyExtractor={(item, index) => `item-${index}`}
-        />
-      </SafeAreaView>
+      <FlatList
+        data={data}
+        renderItem={this.renderItem}
+        keyExtractor={(item, index) => `item-${index}`}
+        style={style.container}
+      />
     );
   }
 }
 
 Home.propTypes = propTypes;
-Home.navigationOptions = navigationOptions;
 
 export default Home;
