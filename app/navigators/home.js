@@ -8,19 +8,40 @@ const Navigator = createStackNavigator(
     Home: {
       screen: Home,
       navigationOptions: {
-        title: 'Je Kale Vader'
+        title: 'Home',
+        headerStyle: {
+          backgroundColor: '#212121',
+          borderBottomWidth: 0
+        },
+        headerTitleStyle: {
+          color: 'white'
+        },
+        headerBackTitleStyle: {
+          color: '#4B77BE'
+        }
       }
     },
     Details: {
       screen: Home,
       path: 'home/:article',
       navigationOptions: ({ navigation }) => ({
-        title: `${navigation.state.params.article}'s Profile'`,
+        title: navigation.state.params.article,
+        headerStyle: {
+          backgroundColor: '#212121',
+          borderBottomWidth: 0
+        },
+        headerTitleStyle: {
+          color: 'white'
+        },
+        headerBackTitleStyle: {
+          color: '#4B77BE'
+        }
       })
     }
   },
   {
-    initialRouteName: 'Home'
+    initialRouteName: 'Home',
+    headerMode: 'float'
   }
 );
 
