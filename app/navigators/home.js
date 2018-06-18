@@ -34,7 +34,7 @@ const Navigator = createStackNavigator(
 );
 
 Navigator.navigationOptions = {
-  tabBarIcon: ({ tintColor }) => <IconHome color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types
+  tabBarIcon: ({ tintColor }) => <IconHome color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types, max-len
 };
 
 export default Navigator;

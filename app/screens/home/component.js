@@ -44,19 +44,17 @@ class Home extends Component {
   componentDidMount() {
     const { getData, getDataSuccess } = this.props;
 
-    this.props.navigation.setParams(
-      {
-        headerOpacity: this.headerOpacity.interpolate(
-          { inputRange: [34, 46], outputRange: [0, 1] }
-        )
-      }
-    );
+    this.props.navigation.setParams({
+      headerOpacity: this.headerOpacity.interpolate({
+        inputRange: [34, 46], outputRange: [0, 1]
+      })
+    });
 
     getData();
     setTimeout(getDataSuccess, 3000);
   }
 
-  onItemPress = (title) => this.props.navigation.navigate('Details', { article: title });
+  onItemPress = title => this.props.navigation.navigate('Details', { article: title });
 
   renderItem = ({ item, index }) => {
     const { safeArea } = this.props;
@@ -69,19 +67,19 @@ class Home extends Component {
       >
         <View style={styles.row}>
           <Text style={styles.title}>
-            {(parseInt(index) + 1)}{". "}{item.title}
+            {(index + 1)}{'. '}{item.title}
           </Text>
           <Text style={styles.description}>
             {item.description}
           </Text>
         </View>
       </TouchableOpacity>
-    )
+    );
   }
 
   render() {
     const { data, loading, safeArea } = this.props;
-    const styles = getStyles(safeArea)
+    const styles = getStyles(safeArea);
 
     if (loading) {
       return (
@@ -100,6 +98,7 @@ class Home extends Component {
         renderItem={this.renderItem}
         keyExtractor={(item, index) => `item-${index}`}
         style={styles.container}
+        contentContainerStyle={styles.contentContainer}
         onScroll={
           Animated.event(
             [{ nativeEvent: { contentOffset: { y: this.headerOpacity } } }],

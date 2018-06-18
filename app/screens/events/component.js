@@ -4,7 +4,7 @@ import style from './style';
 import IconEvents from '../../components/icons/event';
 
 const navigationOptions = {
-  tabBarIcon: ({ tintColor }) => <IconEvents color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types
+  tabBarIcon: ({ tintColor }) => <IconEvents color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types, max-len
 };
 
 const Events = () => (

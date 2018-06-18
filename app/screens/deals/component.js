@@ -4,7 +4,7 @@ import style from './style';
 import IconDeals from '../../components/icons/deals';
 
 const navigationOptions = {
-  tabBarIcon: ({ tintColor }) => <IconDeals color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types
+  tabBarIcon: ({ tintColor }) => <IconDeals color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types, max-len
 };
 
 const Deals = () => (

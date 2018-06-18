@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { YellowBox, StatusBar, View } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './app/store';
@@ -11,15 +11,13 @@ YellowBox.ignoreWarnings([
   'Warning: isMounted(...) is deprecated',
 ]);
 
-export default class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <View style={{ flex: 1 }}>
-          <StatusBar barStyle="light-content" />
-          <AppRouter />
-        </View>
-      </Provider>
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <View style={{ flex: 1 }}>
+      <StatusBar barStyle="light-content" />
+      <AppRouter />
+    </View>
+  </Provider>
+);
+
+export default App;
