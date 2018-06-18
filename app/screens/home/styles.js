@@ -1,14 +1,22 @@
 import { StyleSheet } from 'react-native';
 
-export default StyleSheet.create({
+export default (safeArea) => StyleSheet.create({
   container: {
-    backgroundColor: '#2E2E2E'
+    backgroundColor: '#2E2E2E',
+    paddingTop: safeArea.top + 44
   },
   activityIndicatorContainer: {
     backgroundColor: '#2E2E2E',
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1
+  },
+  heading: {
+    fontSize: 38,
+    fontWeight: "800",
+    color: 'white',
+    paddingTop: 8,
+    paddingLeft: 29
   },
   row: {
     borderBottomWidth: 1,
