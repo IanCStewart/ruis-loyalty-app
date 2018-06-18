@@ -4,7 +4,7 @@ import style from './style';
 import IconQr from '../../components/icons/qr';
 
 const navigationOptions = {
-  tabBarIcon: ({ tintColor }) => <IconQr color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types
+  tabBarIcon: ({ tintColor }) => <IconQr color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types, max-len
 };
 
 const Qr = () => (

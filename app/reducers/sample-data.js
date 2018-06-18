@@ -15,7 +15,7 @@ export default (state = INITIAL_STATE, action) => {
     case DATA_AVAILABLE_SUCCESS:
       return {
         ...state,
-        data: [ ...state.data, ...action.payload ],
+        data: [...state.data, ...action.payload],
         loading: false
       };
     default: return state;

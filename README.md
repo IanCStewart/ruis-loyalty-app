@@ -142,7 +142,35 @@ other instructions. To run the app on your Android device point the expo QR scan
 After the packager is done compiling the message should be prompted:
 ```
 11:38:38: Finished building JavaScript bundle in 3374ms
+11:38:41: Running app on Pixel 2 in development mode
+```
+
+#### Running with debugger
+1. Make sure [React Native Debugger](https://github.com/jhen0409/react-native-debugger) is installed
+```bash
+$ brew cask install react-native-debugger
+```
+
+2. Start packager with debug command
+```bash
+$ yarn start:debug
+```
+
+3. Open app in desired platform
+
+After the packager is done compiling the message should be prompted:
+```
+11:38:38: Finished building JavaScript bundle in 3374ms
 11:38:41: Running app on iPhone in development mode
+```
+
+4. Start remote debugger
+
+Go to the settings screen from expo by either pressing `⌘D` on your keyboard or by `shaking` your physical phone. When in the settings screen choose `Debug Remote JS`. React Native Debugger should be launched and in your terminal you should see the following.
+```bash
+11:24:04: Starting custom debugger by executing: unset ELECTRON_RUN_AS_NODE && open -g 'rndebugger://set-debugger-loc?port=19001' || "/Users/ian/Sites/ruis-loyalty-app"
+11:24:15: You are now debugging remotely; check your browser console for your application logs.
+11:24:24: Running app on iPhone in development mode
 ```
 
 ## ✅ Todo's

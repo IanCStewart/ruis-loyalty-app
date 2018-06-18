@@ -5,11 +5,12 @@
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "start": "react-native-scripts start",
+    "start:debug": "REACT_DEBUGGER=\"unset ELECTRON_RUN_AS_NODE && open -g 'rndebugger://set-debugger-loc?port=19001' ||\" yarn start",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "jest",
-    "eslint": "eslint '{app}/**/**/*.{js}' '*.js'"
+    "eslint": "eslint 'app/**/**/*.js' '*.js'"
   },
   "jest": {
     "preset": "jest-expo"
@@ -22,18 +23,20 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-react-native": "^3.2.1",
-    "jest-expo": "26.0.0",
-    "react-native-scripts": "1.13.1",
-    "react-test-renderer": "16.3.0-alpha.1"
+    "jest-expo": "^28.0.0",
+    "react-native-scripts": "^1.14.0",
+    "react-test-renderer": "^16.4.0"
   },
   "dependencies": {
-    "expo": "^26.0.0",
+    "expo": "^28.0.0",
+    "hoist-non-react-statics": "^2.5.4",
     "prop-types": "^15.6.1",
-    "react": "16.3.0-alpha.1",
-    "react-native": "0.54.0",
+    "react": "^16.4.1",
+    "react-native": "^0.55.4",
     "react-native-svg": "^6.3.1",
-    "react-navigation": "^1.5.11",
+    "react-navigation": "^2.3.1",
     "react-redux": "^5.0.7",
+    "recompose": "^0.27.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0"
   }
