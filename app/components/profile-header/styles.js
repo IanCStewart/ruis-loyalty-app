@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native';
 
-export default () => StyleSheet.create({
+export default (safeArea, progress) => StyleSheet.create({
   container: {
     backgroundColor: '#212121',
-    paddingTop: 35,
+    paddingTop: 35 + safeArea.top,
     paddingBottom: 35,
-    paddingLeft: 29,
-    paddingRight: 29,
+    paddingLeft: 29 + safeArea.left,
+    paddingRight: 29 + safeArea.right,
     flexDirection: 'row'
   },
   avatar: {
@@ -47,7 +47,7 @@ export default () => StyleSheet.create({
     backgroundColor: '#51474A'
   },
   progressIndicator: {
-    width: '40%',
+    width: `${progress}%`,
     height: 8,
     borderRadius: 10,
     backgroundColor: '#4B77BE'

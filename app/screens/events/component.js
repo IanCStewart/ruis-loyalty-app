@@ -10,7 +10,13 @@ const navigationOptions = {
 
 const Events = () => (
   <View style={style.root}>
-    <ProfileHeader />
+    <ProfileHeader
+      avatar={{ uri: 'https://source.unsplash.com/160x160/?portait,person' }}
+      username="Username"
+      coins={273}
+      ranking="ranking"
+      progress={40}
+    />
   </View>
 );
 
