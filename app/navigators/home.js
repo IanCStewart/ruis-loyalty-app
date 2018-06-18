@@ -6,42 +6,30 @@ import IconHome from '../components/icons/home';
 const Navigator = createStackNavigator(
   {
     Home: {
-      screen: Home,
-      navigationOptions: {
-        title: 'Home',
-        headerStyle: {
-          backgroundColor: '#212121',
-          borderBottomWidth: 0
-        },
-        headerTitleStyle: {
-          color: 'white'
-        },
-        headerBackTitleStyle: {
-          color: '#4B77BE'
-        }
-      }
+      screen: Home
     },
     Details: {
       screen: Home,
       path: 'home/:article',
       navigationOptions: ({ navigation }) => ({
-        title: navigation.state.params.article,
-        headerStyle: {
-          backgroundColor: '#212121',
-          borderBottomWidth: 0
-        },
-        headerTitleStyle: {
-          color: 'white'
-        },
-        headerBackTitleStyle: {
-          color: '#4B77BE'
-        }
+        title: navigation.state.params.article
       })
     }
   },
   {
     initialRouteName: 'Home',
-    headerMode: 'float'
+    headerMode: 'float',
+    navigationOptions: {
+      title: 'Home',
+      headerStyle: {
+        backgroundColor: '#212121',
+        borderBottomWidth: 0
+      },
+      headerTitleStyle: {
+        color: 'white'
+      },
+      headerTintColor: '#4B77BE'
+    }
   }
 );
 
