@@ -753,6 +753,17 @@ analytics-node@^2.1.0:
     superagent "^3.5.0"
     superagent-retry "^0.6.0"
 
+anchor-ui-native@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/anchor-ui-native/-/anchor-ui-native-1.1.2.tgz#1aab34dff3ae09fbdc20ea94f0416d534d399128"
+  dependencies:
+    color "^3.0.0"
+    hoist-non-react-statics "^2.5.4"
+    lodash "^4.17.10"
+    react-native-section-list-get-item-layout "^2.2.3"
+    react-native-svg "^6.3.1"
+    recompose "^0.27.1"
+
 ansi-colors@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-1.1.0.tgz#6374b4dd5d4718ff3ce27a671a3b1cad077132a9"
@@ -2154,6 +2165,13 @@ color-support@^1.1.3:
 color@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/color/-/color-2.0.1.tgz#e4ed78a3c4603d0891eba5430b04b86314f4c839"
+  dependencies:
+    color-convert "^1.9.1"
+    color-string "^1.5.2"
+
+color@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/color/-/color-3.0.0.tgz#d920b4328d534a3ac8295d68f7bd4ba6c427be9a"
   dependencies:
     color-convert "^1.9.1"
     color-string "^1.5.2"
@@ -5946,6 +5964,10 @@ react-native-scripts@^1.14.0:
     qrcode-terminal "^0.11.0"
     rimraf "^2.6.1"
     xdl "48.1.4"
+
+react-native-section-list-get-item-layout@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/react-native-section-list-get-item-layout/-/react-native-section-list-get-item-layout-2.2.3.tgz#152a8efdcb3847dbcbeb04cd2d0de4312d3d2fcb"
 
 react-native-svg@6.2.2:
   version "6.2.2"

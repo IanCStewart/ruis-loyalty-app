@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Animated
 } from 'react-native';
-import WithSafeArea from '../../components/with-safe-area';
+import WithSafeArea from 'anchor-ui-native/with-safe-area';
 import getStyles from './styles';
 
 const propTypes = {
