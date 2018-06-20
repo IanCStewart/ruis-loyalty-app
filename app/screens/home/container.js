@@ -1,4 +1,6 @@
 import { connect } from 'react-redux';
+import compose from 'recompose/compose';
+import withTheme from 'anchor-ui-native/with-theme';
 import Home from './component';
 import { getData, getDataSuccess } from '../../actions/sample-data';
 
@@ -12,4 +14,9 @@ const mapDispatchToProps = dispatch => ({
   getDataSuccess: () => dispatch(getDataSuccess())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+const enhance = compose(
+  withTheme,
+  connect(mapStateToProps, mapDispatchToProps)
+);
+
+export default enhance(Home);

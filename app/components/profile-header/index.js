@@ -1,3 +1,4 @@
+import WithTheme from 'anchor-ui-native/with-theme';
 import ProfileHeader from './component';
 
-export default ProfileHeader;
+export default WithTheme(ProfileHeader);

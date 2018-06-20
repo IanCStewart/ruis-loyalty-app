@@ -19,10 +19,12 @@ const propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,
     setParams: PropTypes.func.isRequired
-  }).isRequired
+  }).isRequired,
+  theme: PropTypes.shape({
+    colors: PropTypes.object.isRequired,
+    fonts: PropTypes.object.isRequired
+  }).isRequired,
 };
-
-const styles = getStyles();
 
 class Home extends Component {
   constructor(props) {
@@ -55,37 +57,30 @@ class Home extends Component {
 
   onItemPress = title => this.props.navigation.navigate('Details', { article: title });
 
-  renderItem = ({ item, index }) => (
-    <TouchableOpacity
-      onPress={() => this.onItemPress(item.title)}
-      activeOpacity={0.5}
-    >
-      <View style={styles.row}>
-        <Text style={styles.title}>
-          {(index + 1)}{'. '}{item.title}
-        </Text>
-        <Text style={styles.description}>
-          {item.description}
-        </Text>
-      </View>
-    </TouchableOpacity>
-  )
+  renderItem = ({ item, index }) => {
+    const { theme } = this.props;
+    const styles = getStyles(theme);
 
-  renderFlatListHeader = () => (
-    <View>
-      <ProfileHeader
-        avatar={{ uri: 'https://source.unsplash.com/160x160/?portait,person' }}
-        username="Username"
-        coins={273}
-        ranking="ranking"
-        progress={40}
-      />
-      <Text style={styles.heading}>Latest News</Text>
-    </View>
-  )
+    return (
+      <TouchableOpacity
+        onPress={() => this.onItemPress(item.title)}
+        activeOpacity={0.5}
+      >
+        <View style={styles.row}>
+          <Text style={styles.title}>
+            {(index + 1)}{'. '}{item.title}
+          </Text>
+          <Text style={styles.description}>
+            {item.description}
+          </Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }
 
   render() {
-    const { data, loading } = this.props;
+    const { data, loading, theme } = this.props;
+    const styles = getStyles(theme);
 
     if (loading) {
       return (
@@ -99,7 +94,18 @@ class Home extends Component {
 
     return (
       <AnimatedFlatlist
-        ListHeaderComponent={this.renderFlatListHeader}
+        ListHeaderComponent={
+          <View>
+            <ProfileHeader
+              avatar={{ uri: 'https://source.unsplash.com/160x160/?portait,person' }}
+              username="Username"
+              coins={273}
+              ranking="ranking"
+              progress={40}
+            />
+            <Text style={styles.heading}>Latest News</Text>
+          </View>
+        }
         data={data}
         renderItem={this.renderItem}
         keyExtractor={(item, index) => `item-${index}`}

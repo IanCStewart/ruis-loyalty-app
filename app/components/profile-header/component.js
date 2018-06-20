@@ -15,6 +15,10 @@ const propTypes = {
     right: PropTypes.number.isRequired,
     bottom: PropTypes.number.isRequired,
     left: PropTypes.number.isRequired,
+  }).isRequired,
+  theme: PropTypes.shape({
+    colors: PropTypes.object.isRequired,
+    fonts: PropTypes.object.isRequired
   }).isRequired
 };
 
@@ -24,9 +28,10 @@ const ProfileHeader = ({
   coins,
   ranking,
   progress,
-  safeArea
+  safeArea,
+  theme
 }) => {
-  const styles = getStyles(safeArea, progress);
+  const styles = getStyles(theme, safeArea, progress);
 
   return (
     <View style={styles.container}>

@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 
-export default (safeArea, progress) => StyleSheet.create({
+export default (theme, safeArea, progress) => StyleSheet.create({
   container: {
-    backgroundColor: '#212121',
+    backgroundColor: theme.colors.darkGray,
     paddingTop: 35 + safeArea.top,
     paddingBottom: 35,
     paddingLeft: 29 + safeArea.left,
@@ -13,27 +13,27 @@ export default (safeArea, progress) => StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 40,
-    backgroundColor: '#2E2E2E'
+    backgroundColor: theme.colors.gray
   },
   textContainer: {
     justifyContent: 'center',
     paddingLeft: 14
   },
   heading: {
-    color: '#D9D4D5',
+    color: theme.colors.lighterBrown,
     fontSize: 24,
-    fontFamily: 'avant-garde-bold-condensed-italic'
+    ...theme.fonts.boldCondensedOblique
   },
   coins: {
-    color: '#D9D4D5',
+    color: theme.colors.lighterBrown,
     fontSize: 10,
-    fontFamily: 'avant-garde-book-condensed',
+    ...theme.fonts.bookCondensed,
     paddingLeft: 9
   },
   ranking: {
-    color: '#D9D4D5',
+    color: theme.colors.lighterBrown,
     fontSize: 13,
-    fontFamily: 'avant-garde-book-condensed',
+    ...theme.fonts.bookCondensed,
     marginTop: 5
   },
   progressContainer: {
@@ -44,7 +44,7 @@ export default (safeArea, progress) => StyleSheet.create({
     width: 93,
     height: 8,
     borderRadius: 10,
-    backgroundColor: '#51474A'
+    backgroundColor: theme.colors.brown
   },
   progressIndicator: {
     width: `${progress}%`,
