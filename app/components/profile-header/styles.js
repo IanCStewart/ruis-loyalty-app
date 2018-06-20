@@ -7,7 +7,12 @@ export default (theme, safeArea, progress) => StyleSheet.create({
     paddingBottom: 35,
     paddingLeft: 29 + safeArea.left,
     paddingRight: 29 + safeArea.right,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    shadowColor: '#121112',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 1,
+    shadowRadius: 6,
+    elevation: 1,
   },
   avatar: {
     width: 80,
