@@ -8,8 +8,8 @@ import {
   TouchableOpacity,
   Animated
 } from 'react-native';
-import WithSafeArea from '../../components/with-safe-area';
 import getStyles from './styles';
+import ProfileHeader from '../../components/profile-header';
 
 const propTypes = {
   getData: PropTypes.func.isRequired,
@@ -20,9 +20,10 @@ const propTypes = {
     navigate: PropTypes.func.isRequired,
     setParams: PropTypes.func.isRequired
   }).isRequired,
-  safeArea: PropTypes.shape({
-    top: PropTypes.number.isRequired
-  }).isRequired
+  theme: PropTypes.shape({
+    colors: PropTypes.object.isRequired,
+    fonts: PropTypes.object.isRequired
+  }).isRequired,
 };
 
 class Home extends Component {
@@ -57,8 +58,8 @@ class Home extends Component {
   onItemPress = title => this.props.navigation.navigate('Details', { article: title });
 
   renderItem = ({ item, index }) => {
-    const { safeArea } = this.props;
-    const styles = getStyles(safeArea);
+    const { theme } = this.props;
+    const styles = getStyles(theme);
 
     return (
       <TouchableOpacity
@@ -78,8 +79,8 @@ class Home extends Component {
   }
 
   render() {
-    const { data, loading, safeArea } = this.props;
-    const styles = getStyles(safeArea);
+    const { data, loading, theme } = this.props;
+    const styles = getStyles(theme);
 
     if (loading) {
       return (
@@ -93,12 +94,22 @@ class Home extends Component {
 
     return (
       <AnimatedFlatlist
-        ListHeaderComponent={<Text style={styles.heading}>Home</Text>}
+        ListHeaderComponent={
+          <View>
+            <ProfileHeader
+              avatar={{ uri: 'https://source.unsplash.com/160x160/?portait,person' }}
+              username="Username"
+              coins={273}
+              ranking="ranking"
+              progress={40}
+            />
+            <Text style={styles.heading}>Latest News</Text>
+          </View>
+        }
         data={data}
         renderItem={this.renderItem}
         keyExtractor={(item, index) => `item-${index}`}
         style={styles.container}
-        contentContainerStyle={styles.contentContainer}
         onScroll={
           Animated.event(
             [{ nativeEvent: { contentOffset: { y: this.headerOpacity } } }],
@@ -113,4 +124,4 @@ class Home extends Component {
 
 Home.propTypes = propTypes;
 
-export default WithSafeArea(Home);
+export default Home;
