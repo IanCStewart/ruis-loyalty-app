@@ -4,6 +4,7 @@ import Events from '../screens/events';
 import Qr from '../screens/qr';
 import Deals from '../screens/deals';
 import Profile from '../screens/profile';
+import defaultColors from '../defaults/colors';
 
 const Tabs = createBottomTabNavigator(
   {
@@ -15,9 +16,9 @@ const Tabs = createBottomTabNavigator(
   },
   {
     tabBarOptions: {
-      activeTintColor: '#4B77BE',
+      activeTintColor: defaultColors.accentBlue,
       style: {
-        backgroundColor: '#212121'
+        backgroundColor: defaultColors.darkGray
       }
     }
   }

@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import Home from '../screens/home';
 import IconHome from '../components/icons/home';
+import defaultColors from '../defaults/colors';
 
 const Navigator = createStackNavigator(
   {
@@ -22,13 +23,13 @@ const Navigator = createStackNavigator(
     navigationOptions: {
       title: 'Home',
       headerStyle: {
-        backgroundColor: '#212121',
+        backgroundColor: defaultColors.darkGray,
         borderBottomWidth: 0
       },
       headerTitleStyle: {
         color: 'white'
       },
-      headerTintColor: '#4B77BE'
+      headerTintColor: defaultColors.accentBlue
     }
   }
 );
