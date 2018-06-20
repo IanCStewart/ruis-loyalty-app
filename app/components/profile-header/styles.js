@@ -22,23 +22,23 @@ export default (safeArea, progress) => StyleSheet.create({
   heading: {
     color: '#D9D4D5',
     fontSize: 24,
-    fontWeight: '800',
-    fontStyle: 'italic',
-    marginBottom: 4
+    fontFamily: 'avant-garde-bold-condensed-italic'
   },
   coins: {
     color: '#D9D4D5',
     fontSize: 10,
+    fontFamily: 'avant-garde-book-condensed',
     paddingLeft: 9
   },
   ranking: {
     color: '#D9D4D5',
     fontSize: 13,
-    marginTop: 4
+    fontFamily: 'avant-garde-book-condensed',
+    marginTop: 5
   },
   progressContainer: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'flex-start'
   },
   progressBar: {
     width: 93,
