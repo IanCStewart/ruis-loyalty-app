@@ -23,8 +23,7 @@ const Navigator = createStackNavigator(
     navigationOptions: {
       title: 'Home',
       headerStyle: {
-        backgroundColor: defaultColors.darkGray,
-        borderBottomWidth: 0
+        backgroundColor: defaultColors.darkGray
       },
       headerTitleStyle: {
         color: 'white'
