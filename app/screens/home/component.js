@@ -8,8 +8,8 @@ import {
   TouchableOpacity,
   Animated
 } from 'react-native';
-import WithSafeArea from 'anchor-ui-native/with-safe-area';
 import getStyles from './styles';
+import ProfileHeader from '../../components/profile-header';
 
 const propTypes = {
   getData: PropTypes.func.isRequired,
@@ -19,11 +19,10 @@ const propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,
     setParams: PropTypes.func.isRequired
-  }).isRequired,
-  safeArea: PropTypes.shape({
-    top: PropTypes.number.isRequired
   }).isRequired
 };
+
+const styles = getStyles();
 
 class Home extends Component {
   constructor(props) {
@@ -56,30 +55,37 @@ class Home extends Component {
 
   onItemPress = title => this.props.navigation.navigate('Details', { article: title });
 
-  renderItem = ({ item, index }) => {
-    const { safeArea } = this.props;
-    const styles = getStyles(safeArea);
+  renderItem = ({ item, index }) => (
+    <TouchableOpacity
+      onPress={() => this.onItemPress(item.title)}
+      activeOpacity={0.5}
+    >
+      <View style={styles.row}>
+        <Text style={styles.title}>
+          {(index + 1)}{'. '}{item.title}
+        </Text>
+        <Text style={styles.description}>
+          {item.description}
+        </Text>
+      </View>
+    </TouchableOpacity>
+  )
 
-    return (
-      <TouchableOpacity
-        onPress={() => this.onItemPress(item.title)}
-        activeOpacity={0.5}
-      >
-        <View style={styles.row}>
-          <Text style={styles.title}>
-            {(index + 1)}{'. '}{item.title}
-          </Text>
-          <Text style={styles.description}>
-            {item.description}
-          </Text>
-        </View>
-      </TouchableOpacity>
-    );
-  }
+  renderFlatListHeader = () => (
+    <View>
+      <ProfileHeader
+        avatar={{ uri: 'https://source.unsplash.com/160x160/?portait,person' }}
+        username="Username"
+        coins={273}
+        ranking="ranking"
+        progress={40}
+      />
+      <Text style={styles.heading}>Latest News</Text>
+    </View>
+  )
 
   render() {
-    const { data, loading, safeArea } = this.props;
-    const styles = getStyles(safeArea);
+    const { data, loading } = this.props;
 
     if (loading) {
       return (
@@ -93,12 +99,11 @@ class Home extends Component {
 
     return (
       <AnimatedFlatlist
-        ListHeaderComponent={<Text style={styles.heading}>Home</Text>}
+        ListHeaderComponent={this.renderFlatListHeader}
         data={data}
         renderItem={this.renderItem}
         keyExtractor={(item, index) => `item-${index}`}
         style={styles.container}
-        contentContainerStyle={styles.contentContainer}
         onScroll={
           Animated.event(
             [{ nativeEvent: { contentOffset: { y: this.headerOpacity } } }],
@@ -113,4 +118,4 @@ class Home extends Component {
 
 Home.propTypes = propTypes;
 
-export default WithSafeArea(Home);
+export default Home;
