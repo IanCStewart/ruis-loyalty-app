@@ -9,7 +9,7 @@ const navigationOptions = {
 
 const Events = () => (
   <View style={style.root}>
-    <Text>Event</Text>
+    <Text>Events</Text>
   </View>
 );
 
