@@ -2,8 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default (theme, safeArea) => StyleSheet.create({
   container: {
-    backgroundColor: theme.colors.gray,
-    paddingTop: safeArea.top
+    backgroundColor: theme.colors.gray
   },
   activityIndicatorContainer: {
     backgroundColor: theme.colors.gray,
@@ -15,7 +14,7 @@ export default (theme, safeArea) => StyleSheet.create({
     color: theme.colors.lighterBrown,
     fontSize: 38,
     ...theme.fonts.boldCondensedOblique,
-    marginTop: 30,
+    marginTop: safeArea.top + 30,
     paddingLeft: 29
   }
 });

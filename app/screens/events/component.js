@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { FlatList, Text, Animated } from 'react-native';
+import {
+  FlatList,
+  View,
+  Text,
+  ActivityIndicator,
+  Animated
+} from 'react-native';
 import Card from '../../components/card';
 import getStyles from './styles';
 
 const propTypes = {
+  getEvents: PropTypes.func.isRequired,
+  getEventsSuccess: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  data: PropTypes.arrayOf(Object).isRequired,
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,
     setParams: PropTypes.func.isRequired
@@ -35,11 +45,16 @@ class Events extends Component {
   });
 
   componentDidMount() {
+    const { getEvents, getEventsSuccess } = this.props;
+
     this.props.navigation.setParams({
       headerOpacity: this.headerOpacity.interpolate({
         inputRange: [34, 46], outputRange: [0, 1]
       })
     });
+
+    getEvents();
+    setTimeout(getEventsSuccess, 3000);
   }
 
   onItemPress = title => this.props.navigation.navigate('Event', { event: title });
@@ -54,22 +69,28 @@ class Events extends Component {
   )
 
   render() {
-    const { theme, safeArea } = this.props;
+    const {
+      data,
+      loading,
+      theme,
+      safeArea
+    } = this.props;
     const styles = getStyles(theme, safeArea);
+
+    if (loading) {
+      return (
+        <View style={styles.activityIndicatorContainer}>
+          <ActivityIndicator animating={true}/>
+        </View>
+      );
+    }
 
     const AnimatedFlatlist = Animated.createAnimatedComponent(FlatList);
 
     return (
       <AnimatedFlatlist
         ListHeaderComponent={<Text style={styles.heading}>Events</Text>}
-        data={[
-          { title: 'Title 0' },
-          { title: 'Title 1' },
-          { title: 'Title 2' },
-          { title: 'Title 3' },
-          { title: 'Title 4' },
-          { title: 'Title 5' }
-        ]}
+        data={data}
         renderItem={this.renderItem}
         keyExtractor={(item, index) => `item-${index}`}
         style={styles.container}
