@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, ImageBackground, Image } from 'react-native';
+import { View, Text, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo';
 import toUpper from 'lodash/toUpper';
 import getStyles from './styles';
@@ -11,6 +11,8 @@ const propTypes = {
   title: PropTypes.node.isRequired,
   subTitle: PropTypes.node.isRequired,
   buttonText: PropTypes.node,
+  onPress: PropTypes.func,
+  onLongPress: PropTypes.func,
   theme: PropTypes.shape({
     colors: PropTypes.object.isRequired,
     fonts: PropTypes.object.isRequired
@@ -18,7 +20,9 @@ const propTypes = {
 };
 
 const defaultProps = {
-  buttonText: 'Learn more'
+  buttonText: 'Learn more',
+  onPress: null,
+  onLongPress: null
 };
 
 const Card = ({
@@ -26,33 +30,41 @@ const Card = ({
   title,
   subTitle,
   buttonText,
+  onPress,
+  onLongPress,
   theme
 }) => {
   const styles = getStyles(theme);
 
   return (
-    <ImageBackground
-      resizeMode='cover'
-      source={imageSource}
-      style={styles.container}
-      borderRadius={8}
+    <TouchableOpacity
+      onPress={onPress}
+      onLongPress={onLongPress}
+      activeOpacity={0.75}
     >
-      <LinearGradient
-        style={styles.gradient}
-        colors={['rgba(0,0,0,0.75)', 'transparent', 'transparent', 'rgba(0,0,0,0.75)']}
-        locations={[0, 0.5, 0.65, 1]}
+      <ImageBackground
+        resizeMode='cover'
+        source={imageSource}
+        style={styles.container}
+        borderRadius={8}
       >
-        <View>
-          <Text style={styles.subTitle} numberOfLines={1}>{toUpper(subTitle)}</Text>
-          <Text style={styles.title} numberOfLines={1}>{title}</Text>
-        </View>
-        <Button
-          style={{ alignSelf: 'flex-start' }}
-          text={buttonText}
-          touchableOpacityProps={{ disabled: true, activeOpacity: 1 }}
-        />
-      </LinearGradient>
-    </ImageBackground>
+        <LinearGradient
+          style={styles.gradient}
+          colors={['rgba(0,0,0,0.75)', 'transparent', 'transparent', 'rgba(0,0,0,0.75)']}
+          locations={[0, 0.5, 0.65, 1]}
+        >
+          <View>
+            <Text style={styles.subTitle} numberOfLines={1}>{toUpper(subTitle)}</Text>
+            <Text style={styles.title} numberOfLines={1}>{title}</Text>
+          </View>
+          <Button
+            style={{ alignSelf: 'flex-start' }}
+            text={buttonText}
+            touchableOpacityProps={{ disabled: true, activeOpacity: 1 }}
+          />
+        </LinearGradient>
+      </ImageBackground>
+    </TouchableOpacity>
   );
 };
 
