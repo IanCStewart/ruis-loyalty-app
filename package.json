@@ -8,6 +8,7 @@
     "start:debug": "REACT_DEBUGGER=\"unset ELECTRON_RUN_AS_NODE && open -g 'rndebugger://set-debugger-loc?port=19001' ||\" yarn start",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
+    "ios:debug": "REACT_DEBUGGER=\"unset ELECTRON_RUN_AS_NODE && open -g 'rndebugger://set-debugger-loc?port=19001' ||\" yarn ios",
     "ios": "react-native-scripts ios",
     "test": "jest",
     "eslint": "eslint 'app/**/**/*.js' '*.js'"
