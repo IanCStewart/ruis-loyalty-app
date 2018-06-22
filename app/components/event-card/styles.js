@@ -19,7 +19,7 @@ export default theme => StyleSheet.create({
   },
   textContainer: {
     flex: 1,
-    paddingTop: 14,
+    paddingTop: 12,
     paddingBottom: 6,
     paddingLeft: 16,
     paddingRight: 16
@@ -41,5 +41,32 @@ export default theme => StyleSheet.create({
     ...theme.fonts.book,
     lineHeight: 12,
     color: fade(theme.colors.brown, 0.3)
-  }
+  },
+  attendeeContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  attendeeImagesContainer: {
+    flexDirection: 'row',
+    position: 'relative'
+  },
+  attendeeImageContainer: {
+    width: 19,
+    height: 19,
+    backgroundColor: theme.colors.white,
+    borderRadius: 9.5,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  attendeeImage: {
+    width: 17,
+    height: 17,
+    borderRadius: 8.5,
+    backgroundColor: theme.colors.brown
+  },
+  names: {
+    fontSize: 9,
+    ...theme.fonts.book,
+    color: fade(theme.colors.brown, 0.55)
+  },
 });
