@@ -5,11 +5,11 @@ import {
   View,
   Text,
   ActivityIndicator,
-  TouchableOpacity,
   Animated
 } from 'react-native';
 import getStyles from './styles';
 import ProfileHeader from '../../components/profile-header';
+import Card from '../../components/card';
 
 const propTypes = {
   getData: PropTypes.func.isRequired,
@@ -57,26 +57,14 @@ class Home extends Component {
 
   onItemPress = title => this.props.navigation.navigate('Details', { article: title });
 
-  renderItem = ({ item, index }) => {
-    const { theme } = this.props;
-    const styles = getStyles(theme);
-
-    return (
-      <TouchableOpacity
-        onPress={() => this.onItemPress(item.title)}
-        activeOpacity={0.5}
-      >
-        <View style={styles.row}>
-          <Text style={styles.title}>
-            {(index + 1)}{'. '}{item.title}
-          </Text>
-          <Text style={styles.description}>
-            {item.description}
-          </Text>
-        </View>
-      </TouchableOpacity>
-    );
-  }
+  renderItem = ({ item, index }) => (
+    <Card
+      imageSource={{ uri: `https://source.unsplash.com/1600x900/?drink,${index}` }}
+      title={item.title}
+      subTitle={`subtitle ${index}`}
+      onPress={() => this.onItemPress(item.title)}
+    />
+  )
 
   render() {
     const { data, loading, theme } = this.props;
