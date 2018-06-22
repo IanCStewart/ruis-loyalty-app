@@ -7,7 +7,7 @@ import {
   ActivityIndicator,
   Animated
 } from 'react-native';
-import Card from '../../components/card';
+import EventCard from '../../components/event-card';
 import getStyles from './styles';
 
 const propTypes = {
@@ -54,16 +54,18 @@ class Events extends Component {
     });
 
     getEvents();
-    setTimeout(getEventsSuccess, 3000);
+    setTimeout(getEventsSuccess, 500);
   }
 
   onItemPress = title => this.props.navigation.navigate('Event', { event: title });
 
   renderItem = ({ item, index }) => (
-    <Card
-      imageSource={{ uri: `https://source.unsplash.com/1600x900/?drink,${index}` }}
+    <EventCard
+      eventImage={{ uri: `https://source.unsplash.com/1600x900/?event,${index}` }}
       title={item.title}
-      subTitle={`subtitle ${index}`}
+      date={item.date}
+      description={item.description}
+      attendees={item.attendees}
       onPress={() => this.onItemPress(item.title)}
     />
   )
