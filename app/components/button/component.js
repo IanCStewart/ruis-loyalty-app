@@ -7,6 +7,7 @@ const propTypes = {
   text: PropTypes.node,
   onPress: PropTypes.func,
   onLongPress: PropTypes.func,
+  style: View.propTypes.style,
   theme: PropTypes.shape({
     colors: PropTypes.object.isRequired,
     fonts: PropTypes.object.isRequired
@@ -16,14 +17,16 @@ const propTypes = {
 const defaultProps = {
   text: 'Learn more',
   onPress: null,
-  onLongPress: null
+  onLongPress: null,
+  style: {}
 };
 
 const Button = ({
   theme,
   text,
   onPress,
-  onLongPress
+  onLongPress,
+  style
 }) => {
   const styles = getStyles(theme);
 
@@ -31,11 +34,10 @@ const Button = ({
     <TouchableOpacity
       onPress={onPress}
       onLongPress={onLongPress}
-      // underlayColor={theme.colors.lighterGray}
       activeOpacity={0.75}
       style={styles.touchableHighlight}
     >
-      <View style={styles.container}>
+      <View style={[styles.container, style]}>
         <Text style={styles.text}>{text}</Text>
       </View>
     </TouchableOpacity>

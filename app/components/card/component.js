@@ -25,7 +25,7 @@ const Card = ({ theme }) => {
         <Text style={styles.subTitle} numberOfLines={1}>SUBTITLE</Text>
         <Text style={styles.title} numberOfLines={1}>Card Title</Text>
       </View>
-      <Button />
+      <Button style={{ alignSelf: 'flex-start' }} />
     </ImageBackground>
   );
 };
