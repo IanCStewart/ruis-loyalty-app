@@ -2,12 +2,16 @@ import { StyleSheet } from 'react-native';
 
 export default theme => StyleSheet.create({
   container: {
-    padding: 20,
     marginLeft: 29,
     marginRight: 29,
     height: 190,
+    backgroundColor: theme.colors.white,
+    borderRadius: 8
+  },
+  gradient: {
+    padding: 20,
+    flex: 1,
     justifyContent: 'space-between',
-    backgroundColor: theme.colors.darkGray,
     borderRadius: 8
   },
   subTitle: {
