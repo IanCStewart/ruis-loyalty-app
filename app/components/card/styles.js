@@ -5,7 +5,7 @@ export default theme => StyleSheet.create({
     marginLeft: 29,
     marginRight: 29,
     height: 190,
-    backgroundColor: theme.colors.white,
+    backgroundColor: theme.colors.darkGray,
     borderRadius: 8
   },
   gradient: {

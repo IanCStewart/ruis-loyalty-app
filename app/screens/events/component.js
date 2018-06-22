@@ -11,7 +11,11 @@ const navigationOptions = {
 const Events = () => (
   <View style={style.root}>
     <Text>Events</Text>
-    <Card />
+    <Card
+      imageSource={{ uri: 'https://source.unsplash.com/1600x900/?drink' }}
+      title="Title"
+      subTitle="subtitle"
+    />
   </View>
 );
 

@@ -4,10 +4,11 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import getStyles from './styles';
 
 const propTypes = {
-  text: PropTypes.node,
+  text: PropTypes.node.isRequired,
   onPress: PropTypes.func,
   onLongPress: PropTypes.func,
   style: View.propTypes.style,
+  touchableOpacityProps: PropTypes.object,
   theme: PropTypes.shape({
     colors: PropTypes.object.isRequired,
     fonts: PropTypes.object.isRequired
@@ -15,10 +16,10 @@ const propTypes = {
 };
 
 const defaultProps = {
-  text: 'Learn more',
   onPress: null,
   onLongPress: null,
-  style: {}
+  style: {},
+  touchableOpacityProps: {}
 };
 
 const Button = ({
@@ -26,7 +27,8 @@ const Button = ({
   text,
   onPress,
   onLongPress,
-  style
+  style,
+  touchableOpacityProps
 }) => {
   const styles = getStyles(theme);
 
@@ -36,6 +38,7 @@ const Button = ({
       onLongPress={onLongPress}
       activeOpacity={0.75}
       style={styles.touchableHighlight}
+      {...touchableOpacityProps}
     >
       <View style={[styles.container, style]}>
         <Text style={styles.text}>{text}</Text>
