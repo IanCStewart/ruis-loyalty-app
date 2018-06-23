@@ -7,6 +7,7 @@ import {
   ActivityIndicator,
   Animated
 } from 'react-native';
+import get from 'lodash/get';
 import EventCard from '../../components/event-card';
 import getStyles from './styles';
 
@@ -67,6 +68,7 @@ class Events extends Component {
       description={item.description}
       attendees={item.attendees}
       onPress={() => this.onItemPress(item.title)}
+      liked={get(item, 'liked', false)}
     />
   )
 
