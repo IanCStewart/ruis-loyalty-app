@@ -33,7 +33,8 @@
           "name": "Sara",
           "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,female,7" }
         }
-      ]
+      ],
+      "liked": true
     },
     {
       "title": "Bruis",
@@ -106,7 +107,8 @@
           "name": "Larry",
           "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,1" }
         }
-      ]
+      ],
+      "liked": true
     },
     {
       "title": "Bruis invites Jack & Lewis",
@@ -132,7 +134,8 @@
           "name": "Chad",
           "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,2" }
         }
-      ]
+      ],
+      "liked": true
     }
   ]
 }
