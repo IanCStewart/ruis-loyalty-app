@@ -18,20 +18,6 @@ const IconHeart = ({ color, iconStyle }) => (
   </Svg>
 );
 
-// {/* <svg width="16px" height="14px" viewBox="0 0 16 14">
-// <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-// <g id="Cards/Event-Card---3-Friends/Liked" transform="translate(-8.000000, -9.000000)">
-// <g id="Cards/Event-Card---3-Friends">
-// <g id="Glyphs/Navigation-or-Toolbar/Heart---Filled/Translucent" transform="translate(8.000000, 8.000000)">
-// <g id="Glyphs/Navigation-or-Toolbar/Hear---Filled/White">
-//
-// </g>
-// </g>
-// </g>
-// </g>
-// </g>
-// </svg> */}
-
 IconHeart.propTypes = propTypes;
 IconHeart.defaultProps = defaultProps;
 IconHeart.displayName = 'IconHeart';
