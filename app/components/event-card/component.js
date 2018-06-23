@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo';
 import tpUpper from 'lodash/toUpper';
 import isEmpty from 'lodash/isEmpty';
 import take from 'lodash/take';
@@ -9,6 +10,7 @@ import size from 'lodash/size';
 import join from 'lodash/join';
 import moment from 'moment';
 import getStyles from './styles';
+import IconHeart from '../../components/icons/heart';
 
 const propTypes = {
   eventImage: Image.propTypes.source.isRequired,
@@ -16,6 +18,7 @@ const propTypes = {
   date: PropTypes.string.isRequired,
   description: PropTypes.node.isRequired,
   attendees: PropTypes.arrayOf(Object),
+  liked: PropTypes.bool,
   onPress: PropTypes.func,
   onLongPress: PropTypes.func,
   theme: PropTypes.shape({
@@ -28,7 +31,8 @@ const defaultProps = {
   buttonText: 'Learn more',
   onPress: null,
   onLongPress: null,
-  attendees: []
+  attendees: [],
+  liked: false
 };
 
 const EventCard = ({
@@ -37,6 +41,7 @@ const EventCard = ({
   date,
   description,
   attendees,
+  liked,
   onPress,
   onLongPress,
   theme
@@ -53,7 +58,23 @@ const EventCard = ({
       activeOpacity={0.75}
     >
       <View style={styles.container}>
-        <Image resizeMode="cover" source={eventImage} style={styles.image} />
+        <View style={styles.eventImageContainer}>
+          <Image resizeMode="cover" source={eventImage} style={styles.image} />
+          {
+            liked
+              ? (
+                <LinearGradient
+                  style={styles.gradient}
+                  colors={['rgba(0,0,0,0.5)', 'transparent']}
+                  start={[0, 0]}
+                  end={[0.35, 0.35]}
+                >
+                  <IconHeart iconStyle={styles.liked} />
+                </LinearGradient>
+              )
+              : null
+          }
+        </View>
         <View style={styles.textContainer}>
           <Text numberOfLines={1} style={styles.title}>{tpUpper(title)}</Text>
           <Text numberOfLines={1} style={styles.date}>{moment(date).format('dddd D MMMM')}</Text>

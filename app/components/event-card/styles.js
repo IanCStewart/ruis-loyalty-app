@@ -12,10 +12,26 @@ export default theme => StyleSheet.create({
     overflow: 'hidden',
     flexDirection: 'row'
   },
+  eventImageContainer: {
+    position: 'relative'
+  },
   image: {
     height: 110,
     width: 96,
-    flexShrink: 0
+    flexShrink: 0,
+    backgroundColor: theme.colors.darkGray
+  },
+  gradient: {
+    width: 96,
+    height: 110,
+    position: 'absolute',
+    top: 0,
+    left: 0
+  },
+  liked: {
+    position: 'absolute',
+    top: 8,
+    left: 8
   },
   textContainer: {
     flex: 1,
@@ -62,7 +78,7 @@ export default theme => StyleSheet.create({
     width: 17,
     height: 17,
     borderRadius: 8.5,
-    backgroundColor: theme.colors.brown
+    backgroundColor: theme.colors.darkGray
   },
   names: {
     fontSize: 9,
