@@ -1,0 +1,28 @@
+{
+  "deals": [
+    {
+      "title": "Moët Ice 25% off",
+      "subtitle": "New Discount",
+      "description": "Een zachte en champange speciaal om op ijs te drinken. Koop deze topper nu met 25% korting.",
+      "price": "834"
+    },
+    {
+      "title": "Beer Buddies",
+      "subtitle": "Buy one, get one free",
+      "description": "Drink maar drink met maten. Dus kom snel met al je maten en deel een gratis drankje!! Koop 2 bierjes en krijg er 1 gratis.",
+      "price": "127"
+    },
+    {
+      "title": "Old Fashioned",
+      "subtitle": "10% korting",
+      "description": "Een drankje terug uit het stoff. Deze oude goude is een classy drankje die je nu met 10% korting krijgt.",
+      "price": "263"
+    },
+    {
+      "title": "Desporados",
+      "subtitle": "kras en win",
+      "description": "Bij elke despo een kras en win kaart. Maak kans op prijzen naar te geke festivals. Koop snel een Desporados en misschien win jij.",
+      "price": "46"
+    }
+  ]
+}
