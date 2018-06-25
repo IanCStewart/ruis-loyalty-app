@@ -1,5 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation';
+import IconChevronLeft from 'anchor-ui-native/icons/chevron-left';
 import Qr from '../screens/qr';
 import IconQr from '../components/icons/qr';
 import defaultColors from '../defaults/colors';
@@ -20,7 +21,10 @@ const Navigator = createStackNavigator(
       headerTitleStyle: {
         color: 'white'
       },
-      headerTintColor: defaultColors.accentBlue
+      headerTintColor: defaultColors.accentBlue,
+      headerBackImage: ({ tintColor }) => ( // eslint-disable-line react/prop-types
+        <IconChevronLeft style={{ marginLeft: 5, marginRight: 2 }} size={20} color={tintColor} />
+      )
     }
   }
 );
