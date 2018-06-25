@@ -55,7 +55,7 @@ class Home extends Component {
     setTimeout(getDataSuccess, 500);
   }
 
-  onItemPress = item => this.props.navigation.navigate('Details', { article: item.title, item });
+  onItemPress = item => this.props.navigation.navigate('Article', { article: item.title, item });
 
   renderItem = ({ item, index }) => (
     <Card

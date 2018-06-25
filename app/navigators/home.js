@@ -10,7 +10,7 @@ const Navigator = createStackNavigator(
     Home: {
       screen: Home
     },
-    Details: {
+    Article: {
       screen: Detail,
       path: 'home/:article',
       navigationOptions: ({ navigation }) => ({

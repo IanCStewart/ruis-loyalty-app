@@ -31,5 +31,10 @@ export default theme => StyleSheet.create({
     fontSize: 16,
     ...theme.fonts.book,
     color: theme.colors.white
+  },
+  date: {
+    fontSize: 18,
+    ...theme.fonts.bold,
+    color: theme.colors.white
   }
 });
