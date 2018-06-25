@@ -27,14 +27,15 @@ export default theme => StyleSheet.create({
     paddingLeft: 29,
     paddingRight: 29
   },
-  body: {
-    fontSize: 16,
-    ...theme.fonts.book,
-    color: theme.colors.white
-  },
   date: {
     fontSize: 18,
     ...theme.fonts.bold,
+    color: theme.colors.white,
+    paddingBottom: 5
+  },
+  body: {
+    fontSize: 16,
+    ...theme.fonts.book,
     color: theme.colors.white
   }
 });

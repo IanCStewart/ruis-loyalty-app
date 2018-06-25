@@ -1,9 +1,11 @@
+import 'moment/locale/nl';
 import React, { Component } from 'react';
 import { YellowBox, StatusBar, View } from 'react-native';
 import { AppLoading, Font } from 'expo';
 import map from 'lodash/map';
 import { Provider } from 'react-redux';
 import ThemeProvider from 'anchor-ui-native/theme-provider';
+import moment from 'moment';
 import store from './app/store';
 import AppRouter from './app/navigators/app';
 import defaultFonts from './app/defaults/fonts';
@@ -17,6 +19,8 @@ YellowBox.ignoreWarnings([
 ]);
 
 const cacheFonts = fonts => map(fonts, Font.loadAsync);
+
+moment.locale('nl');
 
 class App extends Component {
   state = {
