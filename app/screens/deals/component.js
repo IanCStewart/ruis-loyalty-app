@@ -46,7 +46,7 @@ class Deals extends Component {
 
     this.props.navigation.setParams({
       headerOpacity: this.headerOpacity.interpolate({
-        inputRange: [154, 166], outputRange: [0, 1]
+        inputRange: [34, 46], outputRange: [0, 1]
       })
     });
 
