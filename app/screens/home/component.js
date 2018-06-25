@@ -63,6 +63,7 @@ class Home extends Component {
       title={item.title}
       subTitle={`subtitle ${index}`}
       onPress={() => this.onItemPress(item)}
+      buttonText="Lees verder"
     />
   )
 
@@ -91,7 +92,7 @@ class Home extends Component {
               ranking="ranking"
               progress={40}
             />
-            <Text style={styles.heading}>Latest News</Text>
+            <Text style={styles.heading}>Laatste Nieuws</Text>
           </View>
         }
         data={data}
