@@ -14,9 +14,9 @@ const Navigator = createStackNavigator(
     Event: {
       screen: Detail,
       path: 'event/:event',
-      navigationOptions: ({ navigation }) => ({
-        title: navigation.state.params.event
-      })
+      navigationOptions: {
+        title: null
+      }
     }
   },
   {

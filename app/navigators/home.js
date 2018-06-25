@@ -14,9 +14,9 @@ const Navigator = createStackNavigator(
     Article: {
       screen: Detail,
       path: 'home/:article',
-      navigationOptions: ({ navigation }) => ({
-        title: navigation.state.params.article
-      })
+      navigationOptions: {
+        title: null
+      }
     }
   },
   {
