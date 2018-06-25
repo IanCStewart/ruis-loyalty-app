@@ -11,6 +11,7 @@ import join from 'lodash/join';
 import moment from 'moment';
 import getStyles from './styles';
 import IconHeart from '../../components/icons/heart';
+import Capitalize from '../../utils/capitalize';
 
 const propTypes = {
   eventImage: Image.propTypes.source.isRequired,
@@ -77,7 +78,7 @@ const EventCard = ({
         </View>
         <View style={styles.textContainer}>
           <Text numberOfLines={1} style={styles.title}>{tpUpper(title)}</Text>
-          <Text numberOfLines={1} style={styles.date}>{moment(date).format('dddd D MMMM')}</Text>
+          <Text numberOfLines={1} style={styles.date}>{Capitalize(moment(date).format('dddd D MMMM'))}</Text>
           <Text numberOfLines={2} style={styles.description}>{description}</Text>
           {
             !isEmpty(attendees)

@@ -52,17 +52,17 @@ class Home extends Component {
     });
 
     getData();
-    setTimeout(getDataSuccess, 3000);
+    setTimeout(getDataSuccess, 500);
   }
 
-  onItemPress = title => this.props.navigation.navigate('Details', { article: title });
+  onItemPress = item => this.props.navigation.navigate('Article', { article: item.title, item });
 
   renderItem = ({ item, index }) => (
     <Card
       imageSource={{ uri: `https://source.unsplash.com/1600x900/?drink,${index}` }}
       title={item.title}
       subTitle={`subtitle ${index}`}
-      onPress={() => this.onItemPress(item.title)}
+      onPress={() => this.onItemPress(item)}
     />
   )
 

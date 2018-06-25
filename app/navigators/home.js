@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import Home from '../screens/home';
+import Detail from '../screens/detail';
 import IconHome from '../components/icons/home';
 import defaultColors from '../defaults/colors';
 
@@ -9,8 +10,8 @@ const Navigator = createStackNavigator(
     Home: {
       screen: Home
     },
-    Details: {
-      screen: Home,
+    Article: {
+      screen: Detail,
       path: 'home/:article',
       navigationOptions: ({ navigation }) => ({
         title: navigation.state.params.article
@@ -23,7 +24,8 @@ const Navigator = createStackNavigator(
     navigationOptions: {
       title: 'Home',
       headerStyle: {
-        backgroundColor: defaultColors.darkGray
+        backgroundColor: defaultColors.darkGray,
+        borderBottomWidth: 0,
       },
       headerTitleStyle: {
         color: 'white'
