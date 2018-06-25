@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import Events from '../screens/events';
+import Detail from '../screens/detail';
 import IconEvents from '../components/icons/event';
 import defaultColors from '../defaults/colors';
 
@@ -10,7 +11,7 @@ const Navigator = createStackNavigator(
       screen: Events
     },
     Event: {
-      screen: Events,
+      screen: Detail,
       path: 'event/:event',
       navigationOptions: ({ navigation }) => ({
         title: navigation.state.params.event
@@ -23,7 +24,8 @@ const Navigator = createStackNavigator(
     navigationOptions: {
       title: 'Events',
       headerStyle: {
-        backgroundColor: defaultColors.darkGray
+        backgroundColor: defaultColors.darkGray,
+        borderBottomWidth: 0
       },
       headerTitleStyle: {
         color: 'white'

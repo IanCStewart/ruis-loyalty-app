@@ -58,7 +58,7 @@ class Events extends Component {
     setTimeout(getEventsSuccess, 500);
   }
 
-  onItemPress = title => this.props.navigation.navigate('Event', { event: title });
+  onItemPress = item => this.props.navigation.navigate('Event', { event: item.style, item });
 
   renderItem = ({ item, index }) => (
     <EventCard
@@ -67,7 +67,7 @@ class Events extends Component {
       date={item.date}
       description={item.description}
       attendees={item.attendees}
-      onPress={() => this.onItemPress(item.title)}
+      onPress={() => this.onItemPress(item)}
       liked={get(item, 'liked', false)}
     />
   )
