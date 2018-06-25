@@ -1,18 +1,27 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import style from './style';
-import IconQr from '../../components/icons/qr';
+import PropTypes from 'prop-types';
+import { View, Text, Image } from 'react-native';
+import qrCode from '../../../assets/images/qr.png';
+import getStyles from './styles';
 
-const navigationOptions = {
-  tabBarIcon: ({ tintColor }) => <IconQr color={tintColor} /> // eslint-disable-line react/display-name, react/prop-types, max-len
+const propTypes = {
+  theme: PropTypes.shape({
+    colors: PropTypes.object.isRequired,
+    fonts: PropTypes.object.isRequired
+  }).isRequired,
 };
 
-const Qr = () => (
-  <View style={style.root}>
-    <Text>Qr</Text>
-  </View>
-);
+const Qr = ({ theme }) => {
+  const styles = getStyles(theme);
 
-Qr.navigationOptions = navigationOptions;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.pageTitle}>Persoonlijke Code</Text>
+      <Image style={styles.image} source={qrCode} />
+    </View>
+  );
+};
+
+Qr.propTypes = propTypes;
 
 export default Qr;

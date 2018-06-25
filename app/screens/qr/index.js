@@ -1,3 +1,4 @@
-import Qr from './container';
+import WithTheme from 'anchor-ui-native/with-theme';
+import Qr from './component';
 
-export default Qr;
+export default WithTheme(Qr);
