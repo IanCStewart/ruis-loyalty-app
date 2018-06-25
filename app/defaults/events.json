@@ -3,32 +3,139 @@
     {
       "title": "Haarlems Onderonsje",
       "description": "We gaan weer helemaal terug naar de roots. Begin je weekend goed met talent van eigen bodem. Hosting: Timmy Turner - Crayflax - Mitch Blase",
-      "date": "2018-06-21T23:55:00+00:00"
+      "date": "2018-06-21T23:55:00+02:00",
+      "attendees": [
+        {
+          "name": "Larry",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,1" }
+        },
+        {
+          "name": "Chad",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,2" }
+        },
+        {
+          "name": "Willie",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,female,3" }
+        },
+        {
+          "name": "John",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,4" }
+        },
+        {
+          "name": "Jane",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,female,5" }
+        },
+        {
+          "name": "Hank",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,6" }
+        },
+        {
+          "name": "Sara",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,female,7" }
+        }
+      ],
+      "liked": true
     },
     {
       "title": "Bruis",
       "description": "De de DJ Booth bruist al. Begin je weekend goed met bruisend talent. Hosting: TABITHA - Crayflax - Gianni Rota - Mitch Blase",
-      "date": "2018-06-22T23:55:00+00:00"
+      "date": "2018-06-22T23:55:00+02:00",
+      "attendees": [
+        {
+          "name": "Larry",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,1" }
+        },
+        {
+          "name": "John",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,4" }
+        },
+        {
+          "name": "Jane",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,female,5" }
+        },
+        {
+          "name": "Hank",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,6" }
+        },
+        {
+          "name": "Sara",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,female,7" }
+        }
+      ]
     },
     {
       "title": "Lollyclub",
       "description": "Geniet van het weekend, luister naar alle zoete tunes van onze getalenteerde DJs. Hosting: Drivah - Djennah - Gianni Rota - Benjamin Beacher",
-      "date": "2018-06-23T23:55:00+00:00"
+      "date": "2018-06-23T23:55:00+02:00",
+      "attendees": [
+        {
+          "name": "Jane",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,female,5" }
+        },
+        {
+          "name": "Hank",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,6" }
+        },
+        {
+          "name": "Sara",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,female,7" }
+        },
+        {
+          "name": "Larry",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,1" }
+        },
+        {
+          "name": "Chad",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,2" }
+        },
+        {
+          "name": "Willie",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,female,3" }
+        }
+      ]
     },
     {
       "title": "Haarlems Onderonsje",
       "description": "We gaan weer helemaal terug naar de roots. Begin je weekend goed met talent van eigen bodem. Hosting: Raynor Bruges - Eva Adamidis - Crayflax",
-      "date": "2018-06-28T23:55:00+00:00"
+      "date": "2018-06-28T23:55:00+02:00",
+      "attendees": [
+        {
+          "name": "Hank",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,6" }
+        },
+        {
+          "name": "Larry",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,1" }
+        }
+      ],
+      "liked": true
     },
     {
       "title": "Bruis invites Jack & Lewis",
       "description": "De de DJ Booth bruist al. Begin je weekend goed met bruisend talent. Hosting: Jack & Lewis - Eva Adamidis - Gianni Rota - Not!",
-      "date": "2018-06-29T23:55:00+00:00"
+      "date": "2018-06-29T23:55:00+02:00",
+      "attendees": [
+        {
+          "name": "Hank",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,6" }
+        },
+        {
+          "name": "Sara",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,female,7" }
+        }
+      ]
     },
     {
       "title": "Lollyclub",
       "description": "Geniet van het weekend, luister naar alle zoete tunes van onze getalenteerde DJs. Hosting: Dylvn - Dieux Pere - Raynor Bruges - Mitch Blase",
-      "date": "2018-06-23T23:55:00+00:00"
+      "date": "2018-06-30T23:55:00+02:00",
+      "attendees": [
+        {
+          "name": "Chad",
+          "avatar": { "uri": "https://source.unsplash.com/38x38/?portait,male,2" }
+        }
+      ],
+      "liked": true
     }
   ]
 }
