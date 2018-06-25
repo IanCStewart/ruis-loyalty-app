@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export default theme => StyleSheet.create({
+export default (theme, safeArea) => StyleSheet.create({
   container: {
     backgroundColor: theme.colors.gray
   },
@@ -14,7 +14,7 @@ export default theme => StyleSheet.create({
     color: theme.colors.lighterBrown,
     fontSize: 38,
     ...theme.fonts.boldCondensedOblique,
-    marginTop: 30,
+    marginTop: safeArea.top + 30,
     paddingLeft: 29
   },
   row: {

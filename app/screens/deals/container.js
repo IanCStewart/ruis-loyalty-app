@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import WithTheme from 'anchor-ui-native/with-theme';
+import WithSafeArea from 'anchor-ui-native/with-safe-area';
 import Deals from './component';
 import { getNews, getNewsSuccess } from '../../actions/news';
 
@@ -16,6 +17,7 @@ const mapDispatchToProps = dispatch => ({
 
 const enhance = compose(
   WithTheme,
+  WithSafeArea,
   connect(mapStateToProps, mapDispatchToProps)
 );
 

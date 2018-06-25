@@ -23,6 +23,12 @@ const propTypes = {
     colors: PropTypes.object.isRequired,
     fonts: PropTypes.object.isRequired
   }).isRequired,
+  safeArea: PropTypes.shape({
+    top: PropTypes.number.isRequired,
+    right: PropTypes.number.isRequired,
+    bottom: PropTypes.number.isRequired,
+    left: PropTypes.number.isRequired,
+  }).isRequired
 };
 
 class Deals extends Component {
@@ -67,8 +73,13 @@ class Deals extends Component {
   )
 
   render() {
-    const { data, loading, theme } = this.props;
-    const styles = getStyles(theme);
+    const {
+      data,
+      loading,
+      theme,
+      safeArea
+    } = this.props;
+    const styles = getStyles(theme, safeArea);
 
     if (loading) {
       return (
