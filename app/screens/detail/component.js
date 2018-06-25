@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo';
 import get from 'lodash/get';
 import moment from 'moment';
 import getStyles from './styles';
+import Capitalize from '../../utils/capitalize';
 
 const propTypes = {
   imageSource: Image.propTypes.source.isRequired,
@@ -32,7 +33,7 @@ class Detail extends Component {
 
       return (
         <View>
-          <Text style={styles.date}>{moment(date).format('dddd D MMMM')}</Text>
+          <Text style={styles.date}>{Capitalize(moment(date).format('dddd D MMMM'))}</Text>
           <Text style={styles.body}>{description}</Text>
         </View>
       );
