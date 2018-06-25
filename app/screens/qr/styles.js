@@ -16,10 +16,8 @@ export default theme => StyleSheet.create({
   },
   image: {
     flex: 1,
-    maxWidth: 306,
-    maxHeight: 306,
-    marginRight: 29,
-    marginLeft: 29,
+    maxWidth: 263,
+    maxHeight: 263,
     alignSelf: 'center'
   }
 });
