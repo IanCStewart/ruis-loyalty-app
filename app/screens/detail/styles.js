@@ -27,7 +27,7 @@ export default theme => StyleSheet.create({
     paddingLeft: 29,
     paddingRight: 29
   },
-  date: {
+  subtitle: {
     fontSize: 18,
     ...theme.fonts.bold,
     color: theme.colors.white,
@@ -37,5 +37,10 @@ export default theme => StyleSheet.create({
     fontSize: 16,
     ...theme.fonts.book,
     color: theme.colors.white
+  },
+  button: {
+    alignSelf: 'flex-start',
+    marginTop: 25,
+    paddingBottom: 0
   }
 });

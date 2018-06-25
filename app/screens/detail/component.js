@@ -6,6 +6,7 @@ import get from 'lodash/get';
 import capitalize from 'lodash/capitalize';
 import moment from 'moment';
 import getStyles from './styles';
+import Button from '../../components/button';
 
 const propTypes = {
   imageSource: Image.propTypes.source.isRequired,
@@ -27,14 +28,25 @@ class Detail extends Component {
   renderBody = (styles) => {
     const { navigation } = this.props;
     const description = get(navigation.state.params, 'item.description');
+    const type = navigation.state.routeName;
 
-    if (navigation.state.routeName === 'Event') {
+    if (type === 'Event') {
       const date = get(navigation.state.params, 'item.date');
 
       return (
         <View>
-          <Text style={styles.date}>{capitalize(moment(date).format('dddd D MMMM'))}</Text>
+          <Text style={styles.subtitle}>{capitalize(moment(date).format('dddd D MMMM'))}</Text>
           <Text style={styles.body}>{description}</Text>
+        </View>
+      );
+    }
+
+    if (type === 'Deal') {
+      return (
+        <View>
+          <Text style={styles.subtitle}>{get(navigation.state.params, 'item.subtitle')}</Text>
+          <Text style={styles.body}>{description}</Text>
+          <Button style={styles.button} text="Gebruik korting" />
         </View>
       );
     }
