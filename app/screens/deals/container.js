@@ -3,16 +3,16 @@ import compose from 'recompose/compose';
 import WithTheme from 'anchor-ui-native/with-theme';
 import WithSafeArea from 'anchor-ui-native/with-safe-area';
 import Deals from './component';
-import { getNews, getNewsSuccess } from '../../actions/news';
+import { getDeals, getDealsSuccess } from '../../actions/deals';
 
 const mapStateToProps = state => ({
-  loading: state.news.loading,
-  data: state.news.data
+  loading: state.deals.loading,
+  data: state.deals.data
 });
 
 const mapDispatchToProps = dispatch => ({
-  getNews: () => dispatch(getNews()),
-  getNewsSuccess: () => dispatch(getNewsSuccess())
+  getDeals: () => dispatch(getDeals()),
+  getDealsSuccess: () => dispatch(getDealsSuccess())
 });
 
 const enhance = compose(

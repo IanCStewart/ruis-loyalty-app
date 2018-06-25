@@ -11,8 +11,8 @@ import getStyles from './styles';
 import Card from '../../components/card';
 
 const propTypes = {
-  getNews: PropTypes.func.isRequired,
-  getNewsSuccess: PropTypes.func.isRequired,
+  getDeals: PropTypes.func.isRequired,
+  getDealsSuccess: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   data: PropTypes.arrayOf(Object).isRequired,
   navigation: PropTypes.shape({
@@ -48,7 +48,7 @@ class Deals extends Component {
   });
 
   componentDidMount() {
-    const { getNews, getNewsSuccess } = this.props;
+    const { getDeals, getDealsSuccess } = this.props;
 
     this.props.navigation.setParams({
       headerOpacity: this.headerOpacity.interpolate({
@@ -56,19 +56,19 @@ class Deals extends Component {
       })
     });
 
-    getNews();
-    setTimeout(getNewsSuccess, 500);
+    getDeals();
+    setTimeout(getDealsSuccess, 500);
   }
 
   onItemPress = item => this.props.navigation.navigate('Deal', { item });
 
   renderItem = ({ item, index }) => (
     <Card
-      imageSource={{ uri: `https://source.unsplash.com/1600x900/?event,night-club,${index}` }}
+      imageSource={{ uri: `https://source.unsplash.com/1600x900/?drinks,night-club,${index}` }}
       title={item.title}
       subTitle={item.subtitle}
       onPress={() => this.onItemPress(item)}
-      buttonText="Lees verder"
+      buttonText={`${item.price} coins`}
     />
   )
 

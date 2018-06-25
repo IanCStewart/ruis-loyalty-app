@@ -1,9 +1,9 @@
 import { GET_DEALS, GET_DEALS_SUCCESS } from './types';
-import sampleNews from '../defaults/news.json';
+import sampleDeals from '../defaults/deals.json';
 
 const getDealsSuccess = () => ({
   type: GET_DEALS_SUCCESS,
-  payload: sampleNews.news
+  payload: sampleDeals.deals
 });
 
 const getDeals = () => ({
