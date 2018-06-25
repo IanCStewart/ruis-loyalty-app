@@ -54,7 +54,7 @@ class Deals extends Component {
     setTimeout(getNewsSuccess, 500);
   }
 
-  onItemPress = item => this.props.navigation.navigate('Article', { article: item.title, item });
+  onItemPress = item => this.props.navigation.navigate('Deal', { item });
 
   renderItem = ({ item, index }) => (
     <Card
