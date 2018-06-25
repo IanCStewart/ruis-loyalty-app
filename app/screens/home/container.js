@@ -2,16 +2,16 @@ import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import WithTheme from 'anchor-ui-native/with-theme';
 import Home from './component';
-import { getData, getDataSuccess } from '../../actions/sample-data';
+import { getNews, getNewsSuccess } from '../../actions/news';
 
 const mapStateToProps = state => ({
-  loading: state.sampleData.loading,
-  data: state.sampleData.data
+  loading: state.news.loading,
+  data: state.news.data
 });
 
 const mapDispatchToProps = dispatch => ({
-  getData: () => dispatch(getData()),
-  getDataSuccess: () => dispatch(getDataSuccess())
+  getNews: () => dispatch(getNews()),
+  getNewsSuccess: () => dispatch(getNewsSuccess())
 });
 
 const enhance = compose(

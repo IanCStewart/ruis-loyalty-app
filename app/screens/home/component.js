@@ -12,8 +12,8 @@ import ProfileHeader from '../../components/profile-header';
 import Card from '../../components/card';
 
 const propTypes = {
-  getData: PropTypes.func.isRequired,
-  getDataSuccess: PropTypes.func.isRequired,
+  getNews: PropTypes.func.isRequired,
+  getNewsSuccess: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   data: PropTypes.arrayOf(Object).isRequired,
   navigation: PropTypes.shape({
@@ -43,7 +43,7 @@ class Home extends Component {
   });
 
   componentDidMount() {
-    const { getData, getDataSuccess } = this.props;
+    const { getNews, getNewsSuccess } = this.props;
 
     this.props.navigation.setParams({
       headerOpacity: this.headerOpacity.interpolate({
@@ -51,17 +51,17 @@ class Home extends Component {
       })
     });
 
-    getData();
-    setTimeout(getDataSuccess, 500);
+    getNews();
+    setTimeout(getNewsSuccess, 500);
   }
 
   onItemPress = item => this.props.navigation.navigate('Article', { article: item.title, item });
 
   renderItem = ({ item, index }) => (
     <Card
-      imageSource={{ uri: `https://source.unsplash.com/1600x900/?drink,${index}` }}
+      imageSource={{ uri: `https://source.unsplash.com/1600x900/?event,night-club,${index}` }}
       title={item.title}
-      subTitle={`subtitle ${index}`}
+      subTitle={item.subtitle}
       onPress={() => this.onItemPress(item)}
       buttonText="Lees verder"
     />
