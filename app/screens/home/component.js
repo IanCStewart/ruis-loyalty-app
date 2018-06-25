@@ -23,7 +23,7 @@ const propTypes = {
   theme: PropTypes.shape({
     colors: PropTypes.object.isRequired,
     fonts: PropTypes.object.isRequired
-  }).isRequired,
+  }).isRequired
 };
 
 class Home extends Component {
