@@ -3,3 +3,6 @@ export const DATA_AVAILABLE_SUCCESS = 'DATA_AVAILABLE_SUCCESS';
 
 export const GET_EVENTS = 'GET_EVENTS';
 export const GET_EVENTS_SUCCESS = 'GET_EVENTS_SUCCESS';
+
+export const GET_NEWS = 'GET_NEWS';
+export const GET_NEWS_SUCCESS = 'GET_NEWS_SUCCESS';
