@@ -9,7 +9,7 @@ export default theme => StyleSheet.create({
     color: theme.colors.lighterBrown,
     fontSize: 38,
     ...theme.fonts.boldCondensedOblique,
-    marginTop: 20,
+    marginTop: 30,
     marginBottom: 4,
     paddingLeft: 29,
     paddingRight: 29
