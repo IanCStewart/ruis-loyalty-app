@@ -86,10 +86,10 @@ class Home extends Component {
         ListHeaderComponent={
           <View>
             <ProfileHeader
-              avatar={{ uri: 'https://source.unsplash.com/160x160/?portait,person' }}
-              username="Username"
+              avatar={{ uri: 'https://images.unsplash.com/photo-1495647073092-135157cc8085?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=160&h=160&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=5215669cd809109b9828d2300beb2376' }}
+              username="Callie Hart"
               coins={273}
-              ranking="ranking"
+              ranking="intermediate"
               progress={40}
             />
             <Text style={styles.heading}>Laatste Nieuws</Text>
